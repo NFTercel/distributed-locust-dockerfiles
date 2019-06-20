@@ -1,0 +1,26 @@
+version: "3.4"
+
+x-common: &common
+  build:
+    context: .
+
+x-environment: &common-env
+  TARGET_URL:
+  S3_SCENARIO_PATH:
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_ACCESS_KEY:
+
+services:
+  master:
+    <<: *common
+    ports:
+      - 8089:8089
+    environment:
+      <<: *common-env
+      LOCUST_MODE: master
+  slave:
+    <<: *common
+    environment:
+      <<: *common-env
+      LOCUST_MODE: slave
+      LOCUST_MASTER_HOST: master
