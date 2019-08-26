@@ -7,8 +7,14 @@ x-common: &common
 x-environment: &common-env
   TARGET_URL:
   S3_SCENARIO_PATH:
+  S3_RESULT_PATH:
+  LOCUST_USER_COUNT:
+  LOCUST_RUN_TIME:
+  LOCUST_NO_WEB:
+  LOCUST_OUTPUT_PREFIX:
   AWS_ACCESS_KEY_ID:
   AWS_SECRET_ACCESS_KEY:
+  AWS_SECURITY_TOKEN:
 
 services:
   master:

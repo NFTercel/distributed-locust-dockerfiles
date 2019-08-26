@@ -15,10 +15,15 @@ Automatically downloading scenario files from AWS S3
 ### Prepare Environment Variables
 ```
 export S3_SCENARIO_PATH=locust/api_a
+export S3_RESULT_PATH=locust/api_a/result
 export TARGET_URL=http://host.docker.internal:8080
 export AWS_ACCESS_KEY_ID=aaa
 export AWS_SECRET_ACCESS_KEY=bbb
+export LOCUST_USER_COUNT=99
+export LOCUST_RUN_TIME=5s
+export LOCUST_NO_WEB=true
 ```
+
 ### Prepare Scenario files
 Upload Locust scenario file `locustfile.py` to S3 ($S3_SCENARIO_PATH)
 
