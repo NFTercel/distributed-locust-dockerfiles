@@ -22,6 +22,11 @@ if [ "${LOCUST_MODE}" = "master" ] && [ "${LOCUST_NO_WEB}" = "true" ]; then
     S3_RESULT_PATH="${S3_RESULT_PATH}/${LOCUST_OUTPUT_PREFIX}"
 fi
 
+LIB_FILE="${ROOT_PATH}/scenarios/requirements.txt"
+if test -f "$LIB_FILE"; then
+    pip install -r $LIB_FILE
+fi
+
 # Run Locust distributed
 if [ "${LOCUST_MODE}" = "master" ]; then
     LOCUST_OPTS="${LOCUST_OPTS} --master"
